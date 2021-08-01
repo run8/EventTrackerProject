@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 public class Flight {
 	
@@ -28,9 +30,11 @@ public class Flight {
 	private double landLongitude;
 
 	@Column(name = "launch_date_time")
+	@CreationTimestamp
 	private LocalDateTime launchDateTime;
 	
 	@Column(name = "land_date_time")
+	@CreationTimestamp
 	private LocalDateTime landDateTime;
 	
 	@Column(name = "launch_site_name")

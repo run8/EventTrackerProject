@@ -63,5 +63,6 @@ class FlightTest {
 //		assertEquals("123456", flight.getStartLocation());
 		
 	}
+	
 
 }
