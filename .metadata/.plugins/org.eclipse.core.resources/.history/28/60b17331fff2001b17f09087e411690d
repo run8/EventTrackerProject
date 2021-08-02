@@ -1,0 +1,13 @@
+package com.skilldistillery.flighttracker.services;
+
+import java.util.List;
+
+import com.skilldistillery.flighttracker.entities.Flight;
+
+public interface FlightService {
+	
+	public List<Flight> allFlights();
+	public Optional<Flight> findById(int id);
+	public boolean addFlight(Flight flight);
+
+}

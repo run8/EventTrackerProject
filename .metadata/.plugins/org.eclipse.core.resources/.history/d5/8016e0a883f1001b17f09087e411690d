@@ -1,0 +1,5 @@
+package com.skilldistillery.flighttracker.repositories;
+
+public interface FlightRepository {
+
+}

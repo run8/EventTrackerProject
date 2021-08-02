@@ -1,0 +1,5 @@
+package com.skilldistillery.flighttracker.services;
+
+public interface FlightService {
+
+}

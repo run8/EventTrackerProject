@@ -1,0 +1,74 @@
+package com.skilldistillery.flighttracker.entities;
+
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Flight {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(name = "launch_latitude")
+	private double launchLatitude;
+	
+	@Column(name = "launch_longitude")
+	private double launchLongitude;
+	
+	@Column(name = "land_latitude")
+	private double landLatitude;
+	
+	@Column(name = "land_longitude")
+	private double landLongitude;
+
+	@Column(name = "launch_date_time")
+	private LocalDateTime launchDateTime;
+	
+	@Column(name = "land_date_time")
+	private LocalDateTime landDateTime;
+	
+	@Column(name = "launch_site_name")
+	private String launchSiteName;
+	
+	@Column(name = "land_site_name")
+	private String landSiteName;
+	
+	private String comment;
+	
+	
+	
+	
+	public Flight() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getStartLocation() {
+		return startLocation;
+	}
+
+	public void setStartLocation(String startLocation) {
+		this.startLocation = startLocation;
+	}
+
+	@Override
+	public String toString() {
+		return "Flight [id=" + id + ", startLocation=" + startLocation + "]";
+	}
+
+	
+
+}

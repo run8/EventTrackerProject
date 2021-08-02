@@ -1,0 +1,13 @@
+package com.skilldistillery.flighttracker.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.skilldistillery.flighttracker.entities.Flight;
+
+public interface FlightRepository extends JpaRepository<Flight, Integer>{
+	public List<Flight> findByFlightId(int id);
+	public List<Flight> findByCommentLike(String word);
+	
+}
