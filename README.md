@@ -11,14 +11,14 @@ This Java Spring Boot REST API (no user interface) tracks paragliding flights. I
 - Git/GitHub
 
 ## REST Endpoints
-| Method | URI                | Request Body              |      Response Body        |
-|--------|--------------------|---------------------------|---------------------------|
-| GET    |  /api/flights      |  leave empty              | JSON Collection of flights
-|--------|--------------------|---------------------------|---------------------------|
-  GET       /api/flight/{id}     leave empty                JSON flight
-|--------|--------------------|---------------------------|---------------------------|
+| Method | URI                | Request Body                                          |      Response Body        |
+|--------|--------------------|-------------------------------------------------------|---------------------------|
+| GET    |  /api/flights      |  leave empty                                          | JSON Collection of flights
+|--------|--------------------|-------------------------------------------------------|---------------------------|
+  GET       /api/flight/{id}     leave empty                                              JSON flight
+|--------|--------------------|-------------------------------------------------------|---------------------------|
   PUT       /flight/{id}/        {
-                                
+
                                   "launchLatitude": 50.8951,
                                   "launchLongitude": -88.0364,
                                   "landLatitude": 78.888,
@@ -30,6 +30,5 @@ This Java Spring Boot REST API (no user interface) tracks paragliding flights. I
                                   "comment": "Strong thermals lifting about 600 fpm"
                                 }   
 
-| Method | URI                | Request Body | Response Body |
-|--------|--------------------|--------------|---------------|
-| GET    | `/api/lemurs`      |              | Collection of representations of all
+| Method | URI                | Request Body                                          |     Response Body         |
+|--------|--------------------|-------------------------------------------------------|---------------------------|
