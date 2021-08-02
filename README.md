@@ -13,6 +13,8 @@ This Java Spring Boot REST API (no user interface) tracks paragliding flights. I
 ## REST Endpoints
 | Method | URI                | Request Body         |      Response Body        |
 |--------|--------------------|----------------------|---------------------------|
-| GET    |  /api/flights      |  leave empty         | JSON Collection of flights|
-|  GET   |   /api/flight/{id} |  leave empty         |      JSON flight          |
-| PUT    |   /flight/{id}/    |    Flight JSON       |                           |
+| GET    |  /api/flights     |  leave empty         | JSON Collection of flights|
+| GET    |  /api/flight/{id} |  leave empty         |      JSON flight          |
+| PUT    | /api/flight/{id}/ |    Flight JSON       |   Updated flight          |
+| POST   |   /flight         |    Flight JSON       | New JSON flight           |
+| DELETE |/flights/{flightId}|   leave empty        |     no response body      |  
