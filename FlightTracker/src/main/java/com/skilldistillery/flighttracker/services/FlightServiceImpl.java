@@ -30,8 +30,28 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	@Override
-	public boolean addFlight(Flight flight) {
+	public Flight addFlight(Flight flight) {
+		return repo.save(flight);
+	}
+
+	@Override
+	public Flight updateFlight(Flight flight) {
+		return repo.save(flight);
+	}
+
+	@Override
+	public boolean deleteFlight(int flightId) {
+		boolean deleted = false;
+		Optional<Flight> flightOptional = repo.findById(flightId);
 		
-		return false;
+		if (flightOptional.isPresent()) {
+			Flight flight = flightOptional.get();
+			int id = flight.getId();
+			
+			repo.deleteById(id);
+			deleted = true;
+		}
+		
+		return deleted;
 	}
 }

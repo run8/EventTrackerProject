@@ -16,6 +16,8 @@ public interface FlightService {
 	// For create, we could use PUT or POST. We use POST for create.
 	public List<Flight> allFlights();
 	public Optional<Flight> findById(int id);
-	public boolean addFlight(Flight flight);
+	public Flight addFlight(Flight flight);
+	public Flight updateFlight(Flight flight);
+	public boolean deleteFlight(int FlightId);
 
 }
