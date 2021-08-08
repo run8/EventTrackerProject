@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Flight Tracker</title>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+	<h1>Flight Tracker</h1>
+
+	<div id="flightsListDiv">
+		<table id="flightsListTable"></table>
+	</div>
+
+	<div id="flight"></div><br>
+	
+	<hr>
+
+	
+	<form name="newFlightForm">
+	<h3>Add a Flight</h3>
+		<label for="launchName">Launch Site Name:</label> 
+		<input type="text" name="launchName"><br> 
+		
+		<label for="landingName">Landing Site Name:</label>
+		<input type="text" name="landingName"><br> 
+		
+		<label for="launchLatitude">Launch Latitude:</label> 
+		<input type="text" name="launchLatitude"><br> 
+		
+		<label for="launchLongitude">Launch Longitude:</label> 
+		<input type="text" name="launchLongitude"><br> 
+
+		<label for="landLatitude">Land Latitude:</label> 
+		<input type="text" name="landLatitude"><br> 
+		
+		<label for="landLongitude">Land Longitude:</label> 
+		<input type="text" name="landLongitude"><br> 
+		
+		<label for="commentInput">How was the flight?</label><br>
+		<textarea name="commentInput" rows="4" cols="50"></textarea><br>
+		
+		<button name="addFlightButton"> Add Flight</button>
+	</form>
+
+
+</body>
+</html>
