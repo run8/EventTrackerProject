@@ -22,10 +22,10 @@ DROP TABLE IF EXISTS `flight` ;
 
 CREATE TABLE IF NOT EXISTS `flight` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `launch_latitude` DOUBLE NULL,
-  `launch_longitude` DOUBLE NULL,
-  `land_latitude` DOUBLE NULL,
-  `land_longitude` DOUBLE NULL,
+  `launch_latitude` VARCHAR(500) NULL,
+  `launch_longitude` VARCHAR(500) NULL,
+  `land_latitude` VARCHAR(500) NULL,
+  `land_longitude` VARCHAR(500) NULL,
   `land_date_time` DATETIME NULL,
   `launch_date_time` DATETIME NULL,
   `launch_site_name` VARCHAR(500) NULL,
@@ -50,8 +50,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `flightdb`;
-INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (1, 38.8951, -77.0364, 39.666, -77.888, '2021-07-01 12:30:20', '2021-06-01 12:30:20', 'Washington DC paragliding site', '2021-07-01 10:30:20', 'String wind at launch coming from the south.');
-INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (2, 50.8951, -88.0364, 78.888, -80.666, '2020-07-01 12:30:20', '2021-06-01 12:30:20', 'Some launch site name', '2021-07-01 11:30:20', 'Strong thermals lifting about 600 fpm');
+INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (1, '38.8951', '-77.0364', '39.666', '-77.888', '2021-07-01 12:30:20', '2021-06-01 12:30:20', 'Washington DC paragliding site', 'Washington DC Landing Site', 'String wind at launch coming from the south.');
+INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (2, '50.8951', '-88.0364', '78.888', '-80.666', '2020-07-01 12:30:20', '2021-06-01 12:30:20', 'Some launch site name', 'Some landing site', 'Strong thermals lifting about 600 fpm');
 
 COMMIT;
 
