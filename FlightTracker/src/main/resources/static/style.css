@@ -1,0 +1,19 @@
+
+/*
+flightsListTable {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th, th1, th2, th3 {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+thr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+*/
