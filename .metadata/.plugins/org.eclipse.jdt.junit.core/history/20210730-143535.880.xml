@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="FlightTest" project="JPAFlightTracker" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="FlightTest.FlightTest" time="0.114" displayname="FlightTest" uniqueid="[engine:junit-jupiter]/[class:FlightTest.FlightTest]">
-    <testcase name="test" classname="FlightTest.FlightTest" time="0.114" displayname="test()" uniqueid="[engine:junit-jupiter]/[class:FlightTest.FlightTest]/[method:test()]"/>
-  </testsuite>
-</testrun>

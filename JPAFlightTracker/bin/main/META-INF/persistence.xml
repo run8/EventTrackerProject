@@ -4,7 +4,7 @@
 	
 	<persistence-unit name="JPAFlightTracker">
 	
-		    <class>com.skilldistillery.jpaflighttracker.entities.Flight</class>
+		    <class>com.skilldistillery.flighttracker.entities.Flight</class>
 	
 	
 		<properties>		

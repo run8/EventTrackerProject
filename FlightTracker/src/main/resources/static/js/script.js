@@ -145,7 +145,7 @@ function loadFlightDetails(id){
 };
 
 function displayFlightDetails(flight){
-	let div = document.getElementById(detailView);
+	let div = document.getElementById('detailView');
 	// if (div.firstElementChild !== null){
 	// 	div.firstElementChild.remove();
 	// }
@@ -284,7 +284,53 @@ function displayFlightDetails(flight){
 	br = document.createElement('br');
 	fm.appendChild(br);
 
+	let btn = document.createElement('button');
+	btn.name = 'update';
+	btn.textContent = 'Update';
+	btn.addEventListener('click', function(e) {
+		e.preventDefault();
+		modifyFlight(flight);
+	});
+	
+	fm.appendChild(btn);
 
+	console.log('form stuff: ' + fm);
+	div.appendChild(fm);
+
+}
+
+function modifyFlight(flight){
+	let flightJSON = {
+		id : parseInt(document.getElementById('id').value),
+		launchLatitude : document.getElementById('launchLatitude').value,
+		launchLongitude : document.getElementById('launchLongitude').value,
+		landLatitude : document.getElementById('landLatitude').value,
+		landLongitude : document.getElementById('landLongitude').value,
+		launchDateTime : document.getElementById('launchDateTime').value,
+		landDateTime : document.getElementById('landDateTime').value,
+		launchSiteName : document.getElementById('launchSiteName').value,
+		landSiteName : document.getElementById('landingSiteName').value,
+		comment : document.getElementById('comment').value
+	};
+	// console.log(flightJSON);
+	let xhr = new XMLHttpRequest();
+	xhr.open('PUT', 'api/flight');
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState === 4) {
+			if (xhr.status === 200) {
+						let updatedFlight = JSON.parse(xhr.responseText);  // The sresponse comes back and is biult into a JS object
+						console.log('flight***********' + updatedFlight);
+				loadFlights();
+				location.reload();
+			} else {
+				console.log('Response failed: ' + xhr.status);
+			}
+		}
+	};
+	xhr.setRequestHeader('Content-type', 'application/json');
+	let thing = JSON.stringify(flightJSON);
+	console.log('Thing.......:' + thing);
+	xhr.send(JSON.stringify(flightJSON));
 }
 
 

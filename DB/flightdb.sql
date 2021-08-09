@@ -50,8 +50,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `flightdb`;
-INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (1, '38.8951', '-77.0364', '39.666', '-77.888', '2021-07-01 12:30:20', '2021-06-01 12:30:20', 'Washington DC paragliding site', 'Washington DC Landing Site', 'String wind at launch coming from the south.');
-INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (2, '50.8951', '-88.0364', '78.888', '-80.666', '2020-07-01 12:30:20', '2021-06-01 12:30:20', 'Some launch site name', 'Some landing site', 'Strong thermals lifting about 600 fpm');
+INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (1, '38.8951', '-77.0364', '39.666', '-77.888', '2021-06-01 12:30:20', '2021-06-01 11:30:20', 'Washington DC paragliding site', 'Washington DC Landing Site', 'String wind at launch coming from the south.');
+INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (2, '50.8951', '-88.0364', '78.888', '-80.666', '2020-07-01 12:30:20', '2021-07-01 11:30:20', 'Some launch site name', 'Some landing site', 'Strong thermals lifting about 600 fpm');
+INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (3, '60.443', '-44.321', '55.77', '-89.98', '2020-08-01 13:34:20', '2020-08-01 09:00:20', 'Mussel Rock', 'Mussel Rock', 'Wind coming from the South.');
+INSERT INTO `flight` (`id`, `launch_latitude`, `launch_longitude`, `land_latitude`, `land_longitude`, `land_date_time`, `launch_date_time`, `launch_site_name`, `land_site_name`, `comment`) VALUES (4, '66.78', '-45.99', '44.99', '-78.44', '2021-04-01 10:15:20', '2021-04-01 09:50:20', 'Ed Levin 600 ft', 'Ed Levin', 'Saw a dust devil');
 
 COMMIT;
 

@@ -65,27 +65,27 @@ public class FlightController {
 	}
 
 	// This method modifies an existing flight and updates it.
-	@PutMapping("flight/{id}")  // REST wants to make it clear the endpoints corrospond to a specific entity
-	public Flight modifyFlight(@PathVariable Integer id, HttpServletResponse res, @RequestBody Flight flight) {
-		Flight updatedFlight = null;
+	@PutMapping("flight")  // REST wants to make it clear the endpoints corrospond to a specific entity
+	public Flight modifyFlight(HttpServletResponse res, @RequestBody Flight flight) {
+//		Flight updatedFlight = null;
 
-		Optional<Flight> existingFlight = svc.findById(id);  // If it exists it will do the update, otherwise will return null.
-		if (!existingFlight.isPresent()) {       // Put method can be used for updates AND inserts but this clause prevents it.
-			res.setStatus(404);
-		} else {
+//		Optional<Flight> existingFlight = svc.findById(flight);  // If it exists it will do the update, otherwise will return null.
+//		if (!existingFlight.isPresent()) {       // Put method can be used for updates AND inserts but this clause prevents it.
+//			res.setStatus(404);
+//		} else {
 
-			try {
-				updatedFlight = svc.updateFlight(flight);
-				if (updatedFlight == null) {
-					res.setStatus(404);
-				}
+//			try {
+//				updatedFlight = svc.updateFlight(flight);
+//				if (updatedFlight == null) {
+//					res.setStatus(404);
+//				}
+//
+//			} catch (Exception e) {
+//				res.setStatus(400);
+//			}
+//		}
 
-			} catch (Exception e) {
-				res.setStatus(400);
-			}
-		}
-
-		return updatedFlight;
+		return svc.updateFlight(flight);
 	}
 	
 	@PostMapping("flight")
