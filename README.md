@@ -13,7 +13,7 @@ This Java Spring Boot REST API with user interface facilitates a user to track p
 - Java Persistence API (JPA)
 - MySQL and MySQL Workbench for Database Schema Design
 - Git/GitHub
-
+- AJAX 
 ## How To Use
 This website is not yet designed for new users. This website is designed for a paragliding pilot to track paragliding flights. This application can save new flight information to a database, modifying previously recorded flights, read and display records of previously recorded flights. A user accesses the website by simply going to the URL (TBD). The website presents a list of previously recorded flights. To view all flights, scroll down untill the end of the flight list. To record a new flight, add information to the 'Add a Flight' form at the top of the web site ('Launch site name', 'Landing Site Name', 'Launch Latitude' etc.). After adding the flight information, press the 'Add Flight' button.  After pressing the button, the new recorded flight will appear at the bottom of the list of flights.
 
