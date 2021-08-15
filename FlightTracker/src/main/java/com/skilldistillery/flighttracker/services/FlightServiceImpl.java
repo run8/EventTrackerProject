@@ -31,12 +31,12 @@ public class FlightServiceImpl implements FlightService {
 
 	@Override
 	public Flight addFlight(Flight flight) {
-		return repo.save(flight);
+		return repo.saveAndFlush(flight);
 	}
 
 	@Override
 	public Flight updateFlight(Flight flight) {
-		return repo.save(flight);
+		return repo.saveAndFlush(flight);
 	}
 
 	@Override

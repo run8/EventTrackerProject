@@ -1,9 +1,0 @@
-package com.skilldistillery.flighttracker.entities;
-
-public class Flight {
-	
-	private int id;
-	
-	private String startPoint; 
-
-}

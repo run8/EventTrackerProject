@@ -1,6 +1,173 @@
+<!-- /////////////////Home Display All Flights and Add New Flight ////////////////-->
+<div class="home">
+<h1>Flight Tracker</h1>
 
-<div class="class1"></div>
-<ul>
-  <li *ngFor="let flight of flights"> {{flight | json}} </li>
+<form *ngIf="!selected">
+  <label for="launchSiteName">Launch Site Name:</label>
+  <input type="text" name="launchSiteName" [(ngModel)]="newFlight.launchSiteName"
+  /><br />
 
-</ul>
+  <label for="landingSiteName">Landing Site Name:</label>
+  <input type="text" name="landSiteName" [(ngModel)]="newFlight.landSiteName"
+  /><br />
+
+  <label for="launchLatitude">Launch Latitude:</label>
+  <input type="text" name="launchLatitude" [(ngModel)]="newFlight.launchLatitude"
+  /><br />
+
+  <label for="launchLongitude">Launch Longitude:</label>
+  <input type="text" name="launchLongitude" [(ngModel)]="newFlight.launchLongitude"
+  /><br />
+
+  <label for="landLatitude">Land Latitude:</label>
+  <input type="text" name="landLatitude" [(ngModel)]="newFlight.landLatitude"
+  /><br />
+
+  <label for="landLongitude">Land Longitude:</label>
+  <input type="text" name="landLongitude" [(ngModel)]="newFlight.landLongitude"
+  /><br />
+
+  <label for="commentInput">How was the flight?</label><br />
+  <textarea name="commentInput" rows="4" cols="50" [(ngModel)]="newFlight.comment"
+  ></textarea
+  ><br />
+
+  <input type="submit" name="submit" (click)="addNewFlight()" />
+</form>
+<hr />
+</div>
+<!-- /////////////////Home Display All Flights and Add New Flight ////////////////-->
+
+<!-- <table *ngIf="!selected" class="table table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Flight Launch Site</th>
+      <th>Comments</th>
+    </tr>
+  </thead> -->
+
+<!-- <tbody>
+    <tr [ngClass]="todo.completed ? 'complete' : '' " *ngFor="let todo of todos | incomplete:showComplete">
+      <td (click)="displayTodo(todo)">{{todo.task}}</td>
+      <td><input type="checkbox" name="completed" [(ngModel)]="todo.completed" (change)='updateTodo(todo)'></td>
+      <td>{{todo.completed}}</td>
+      <td><button (click)="deleteTodo(todo.id)">X</button></td>
+    </tr>
+  </tbody> -->
+<!-- </table> -->
+
+<!-- /////////////////Display all Flights ////////////////-->
+<div name="displayAllFlights" *ngIf="! selected">
+<table id="displayAllFlights" class="table table-striped">
+  <thead>
+    <tr>
+      <th colspan="1">Flight Number</th>
+      <th colspan="1">Launch Site</th>
+      <th colspan="1">Comments</th>
+    </tr>
+  </thead>
+<tbody>
+  <tr *ngFor="let flight of flights" (click) = "setSelected(flight)">
+    <td>{{ flight.id }}</td>
+    <td >{{ flight.launchSiteName }}</td>
+    <td>{{ flight.comment }}</td>
+    <!-- <button>View Flight Details</button> -->
+  </tr>
+  <hr>
+</tbody>
+</table>
+</div>
+<!-- /////////////////Display all Flights ////////////////-->
+
+<!-- <tbody>
+  <tr *ngFor="let poke of pokemons | pokeType: selectedType " (click)="setSelected(poke)">
+    <td>{{poke.pokeId}}</td>
+    <td>{{poke.name}}</td>
+    <td>
+      <img [src]="poke.img"/>
+    </td>
+  </tr>
+</tbody> -->
+
+<!-- /////////////////Display Flight Details  ////////////////-->
+<div id="flightDetailsDiv" *ngIf="selected">
+  <h1>Flight Details</h1>
+
+  <table id="flightListDetailsTable" class="table table-striped">
+    <th>
+      <tr>
+        <td>Flight {{selected.id}}</td>
+      </tr>
+    </th>
+    <tbody>
+      <tr>
+        <label for="launchSiteName">Launch Site Name</label>
+        <td>{{ selected.launchSiteName }}</td>
+      </tr>
+      <tr>
+        <label for="landingSiteName">Landing Site Name</label>
+        <td>{{selected.landSiteName}}</td>
+      </tr>
+      <tr>
+        <label for="launchLongitude">Launch Longitude</label>
+        <td>{{selected.launchLongitude}}</td>
+      </tr>
+      <tr>
+        <label for="launchLatitude">Launch Latitude</label>
+        <td>{{selected.launchLatitude}}</td>
+      </tr>
+      <tr>
+        <label for="landLatitude">Land Latitude</label>
+        <td>{{selected.landLatitude}}</td>
+      </tr>
+      <tr>
+        <label for="comment">Comment</label>
+        <td>{{selected.comment}}</td>
+      </tr>
+      <button (click)='selected=null'>Back</button>
+      <button (click)='deleteFlight(selected.id)'>Delete</button>
+      <button (click)='setEditFlight()'>Edit Flight</button>
+      <td></td>
+    </tbody>
+  </table>
+</div>
+<!-- /////////////////Display Flight Details  ////////////////-->
+
+<!-- /////////////////Edit Flight ////////////////-->
+<!-- <div id="editFlight" >
+  <form>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname">
+  </form>
+
+</div> -->
+<!-- /////////////////Edit Flight ////////////////-->
+<div id="editFlight" *ngIf="editFlight" class="editFlight">
+    Launch Site Name: <input type="text" name="launchSiteName" [(ngModel)]="editFlight.launchSiteName"><br>
+    landingSiteName: <input type="text" name="landingSiteName" [(ngModel)]="editFlight.landSiteName"><br>
+    launchLatitude: <input type="text" name="launchLatitude" [(ngModel)]="editFlight.launchLatitude"><br>
+    launchLongitude: <input type="text" name="launchLongitude" [(ngModel)]="editFlight.launchLongitude"><br>
+    Landing Latitude: <input type="text" name="landLatitude" [(ngModel)]="editFlight.landLatitude"><br>
+    Landing Longitude: <input type="text" name="landLongitude" [(ngModel)]="editFlight.landLongitude"><br>
+    Comment: <input type="text" name="comment" [(ngModel)]="editFlight.comment"><br>
+
+    <input type="submit" name="Save" value="Save" (click)="updateFlight(editFlight)">
+    <!-- <input type="submit" name="Cancel" value="Cancel" (click)="editTodo = null"> -->
+
+</div>
+
+
+
+
+<!-- <tbody>
+    <tr > -->
+<!-- <td (click)="displayDetails(flight)">{{flight.launchSiteName}}</td> -->
+<!-- <td><button (click)="deleteFlight(flight.id)">Delete</button></td> -->
+
+<!-- </tr>
+  </tbody>
+</table> -->
+
+<!-- <li *ngFor="let flight of flights"> {{flight | json}} </li> -->

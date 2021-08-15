@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FlightsService } from './services/flights.service';
+import { FlightsService } from './services/flight.service';
 import { FlightListComponent } from './components/flight-list/flight-list.component';
 
 @NgModule({

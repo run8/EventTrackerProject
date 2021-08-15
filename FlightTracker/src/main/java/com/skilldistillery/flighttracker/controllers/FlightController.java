@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.skilldistillery.flighttracker.entities.Flight;
 import com.skilldistillery.flighttracker.services.FlightService;
 
+@CrossOrigin({"*", "http://localhost:4210"})
 @RequestMapping("api")
 @RestController
 public class FlightController {
@@ -68,12 +70,12 @@ public class FlightController {
 	@PutMapping("flight")  // REST wants to make it clear the endpoints corrospond to a specific entity
 	public Flight modifyFlight(HttpServletResponse res, @RequestBody Flight flight) {
 //		Flight updatedFlight = null;
-
+//
 //		Optional<Flight> existingFlight = svc.findById(flight);  // If it exists it will do the update, otherwise will return null.
 //		if (!existingFlight.isPresent()) {       // Put method can be used for updates AND inserts but this clause prevents it.
 //			res.setStatus(404);
 //		} else {
-
+//
 //			try {
 //				updatedFlight = svc.updateFlight(flight);
 //				if (updatedFlight == null) {
