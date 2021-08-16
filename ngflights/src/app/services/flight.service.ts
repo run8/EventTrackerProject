@@ -53,15 +53,6 @@ export class FlightsService {
     }
 
     public update(flight: Flight) {
-      // if(todo.completed === true) {
-      //   let completeDate = this.datePipe.transform(Date.now(), 'shortDate');
-      //   if(completeDate != null) {
-      //     todo.completeDate = completeDate;
-      //   }
-      // } else {
-      //   todo.completeDate = '';
-      // }
-
       return this.http.put<Flight>(this.urlPost, flight, this.httpOptions).pipe(
         catchError((err: any) => {
           console.log(err);
@@ -70,6 +61,8 @@ export class FlightsService {
       )
 
     }
+
+
 
 
 }

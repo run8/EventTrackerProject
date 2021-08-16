@@ -93,4 +93,26 @@ export class FlightListComponent implements OnInit {
     setEditFlight() : void {
       this.editFlight = Object.assign({}, this.selected);
     }
+
+    //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+    public calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number)
+    {
+      let R = 6371; // km
+      let dLat = this.toRad(lat2 - lat1);
+      let dLon = this.toRad(lon2-lon1);
+      var lat1 = this.toRad(lat1);
+      var lat2 = this.toRad(lat2);
+
+      let a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+      let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      let d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+    public toRad(Value: number)
+    {
+        return Value * Math.PI / 180;
+    }
 }

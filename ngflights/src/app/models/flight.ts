@@ -6,8 +6,8 @@ export class Flight {
   launchLongitude: string;
   landLatitude: string;
   landLongitude: string;
-  // launchDateTime: string | null;
-  // landDateTime: string | null;
+  launchDateTime: string | null;
+  landDateTime: string | null;
   comment: string;
   constructor(
     id: number = 0,
@@ -17,8 +17,8 @@ export class Flight {
     launchLongitude: string = '',
     landLatitude: string = '',
     landLongitude: string = '',
-    // launchDateTime: string = '',
-    // landDateTime: string = '',
+    launchDateTime: string = '',
+    landDateTime: string = '',
     comment: string = ''
   ){
     this.id = id;
@@ -28,8 +28,8 @@ export class Flight {
     this.launchLongitude = launchLongitude;
     this.landLatitude = landLatitude;
     this.landLongitude = landLongitude;
-    // this.launchDateTime = launchDateTime;
-    // this.landDateTime = landDateTime;
+    this.launchDateTime = launchDateTime;
+    this.landDateTime = landDateTime;
     this.comment = comment;
   }
 }

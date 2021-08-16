@@ -1,7 +1,6 @@
 package com.skilldistillery.flighttracker.entities;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Formula;
 
 @Entity
 public class Flight {
@@ -46,6 +46,8 @@ public class Flight {
 	
 	private String comment;
 	
+//	private float distanceTraveledKilometers;
+	
 	public Flight() {	}
 
 	public Flight(int id, String launchLatitude, String launchLongitude, String landLatitude, String landLongitude,
@@ -63,11 +65,6 @@ public class Flight {
 		this.landSiteName = landSiteName;
 		this.comment = comment;
 	}
-
-
-
-
-
 
 	public int getId() {
 		return id;
